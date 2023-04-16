@@ -73,7 +73,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label fx:id="confirmMessage" text="Admin user has been added successfully" textFill="GREEN" visible="false">
+                  <Label fx:id="errorMsg" text="Admin user has been added successfully" textFill="GREEN" visible="false">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>

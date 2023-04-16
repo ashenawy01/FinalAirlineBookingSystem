@@ -6,6 +6,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+
 
 public class CreateAdminController extends AdminViewController{
 
@@ -31,14 +33,23 @@ public class CreateAdminController extends AdminViewController{
                 emailField.getText(),
                 passwordField.getText(),
                 isGlobalCheck.isSelected(),
-                true) != null) {
-            confirmMessage.setVisible(true);
+                true) != null)
+        {
+            display("Staff user has been added successfully", Color.GREEN);
+
             clearAll();
         } else {
-            errorMsg.setVisible(true);
+            display("Invalid input! please, try again", Color.RED);
             clearAll();
         }
     }
+
+    private void display(String msg, Color color) {
+        errorMsg.setText(msg);
+        errorMsg.setTextFill(color);
+        confirmMessage.setVisible(true);
+    }
+
     private void clearAll () {
         firstNameField.clear();
         lastNameField.clear();
@@ -46,6 +57,5 @@ public class CreateAdminController extends AdminViewController{
         passwordField.clear();
         isGlobalCheck.setSelected(false);
         confirmMessage.setVisible(false);
-        errorMsg.setVisible(false);
     }
 }
