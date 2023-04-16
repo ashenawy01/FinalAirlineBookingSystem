@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.airline.controllers.Staff.Controllers.BookingController">
+
+    <children>
+        <SplitPane dividerPositions="0.11840277777777776" layoutY="-3.0" orientation="VERTICAL" prefHeight="577.0" prefWidth="950.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="949.0">
+                    <children>
+                        <HBox alignment="CENTER" layoutX="-3.0" prefHeight="70.0" prefWidth="957.0">
+                            <children>
+                                <Hyperlink fx:id="signOut" onAction="#handleNavigation" text="Sign out" textFill="RED">
+                                    <font>
+                                        <Font name="Bell MT Bold" size="14.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                </Hyperlink>
+                                <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="832.0">
+                                    <children>
+                                        <Hyperlink fx:id="myProfile" layoutX="460.0" layoutY="33.0" onAction="#handleNavigation" text="My profile">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Hyperlink>
+                                        <Hyperlink fx:id="manageFlight" layoutX="495.0" layoutY="32.0" onAction="#handleNavigation" text="Manage Flight">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </Hyperlink>
+                                        <Hyperlink fx:id="bookings" layoutX="428.0" layoutY="32.0" onAction="#handleNavigation" text="Bookings">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </Hyperlink>
+                                        <Hyperlink fx:id="flights" layoutX="397.0" layoutY="32.0" onAction="#handleNavigation" text="Flights">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="10.0" />
+                                            </HBox.margin>
+                                        </Hyperlink>
+                                    </children></HBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="510.0" prefWidth="949.0">
+                    <children>
+                        <VBox prefHeight="505.0" prefWidth="949.0">
+                            <children>
+                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Label fx:id="filterLabel1" text="Filter" textFill="#0c7aff">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="clientIdField" prefHeight="26.0" prefWidth="138.0" promptText="Client ID">
+                                            <padding>
+                                                <Insets left="5.0" right="20.0" />
+                                            </padding>
+                                            <HBox.margin>
+                                                <Insets left="20.0" right="20.0" />
+                                            </HBox.margin></TextField>
+                                        <DatePicker fx:id="dateFilterField" promptText="Booking Date">
+                                            <HBox.margin>
+                                                <Insets right="20.0" />
+                                            </HBox.margin></DatePicker>
+                                        <Button fx:id="filterBtn" mnemonicParsing="false" onAction="#filterHandler" style="-fx-background-color: #0c7aff;" text="Apply" textFill="WHITE">
+                                            <effect>
+                                                <Glow level="0.12" />
+                                            </effect>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor></Button>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
+                                    <padding>
+                                        <Insets left="25.0" right="25.0" />
+                                    </padding>
+                                </HBox>
+
+
+                                <TableView fx:id="bookingTable" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="727.0">
+                                    <columns>
+                                        <TableColumn fx:id="bookingIdCol" prefWidth="74.99999505281448" text="Booking No">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="seatsNo" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn fx:id="clientIdCol" prefWidth="140" text="Client ID">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="origin" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn fx:id="flightsNoCol" prefWidth="185.0" text="Flights No">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="destination" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn fx:id="dateCol" prefWidth="145.39996337890625" text="Booking Date">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="airline" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn fx:id="travelersNoCol" prefWidth="100" text="Travelers No">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="flightTime" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn fx:id="totalFareCol" prefWidth="112.8000366210938" text="Total Fare">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="duration" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+                                    <VBox.margin>
+                                        <Insets bottom="25.0" left="90.0" right="100.0" />
+                                    </VBox.margin>
+                                </TableView>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+
+</AnchorPane>

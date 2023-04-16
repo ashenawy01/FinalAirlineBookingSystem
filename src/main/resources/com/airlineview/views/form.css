@@ -1,0 +1,51 @@
+.background {
+    -fx-background-color: #f7f7f7;
+}
+
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.form-container {
+    -fx-background-color: white;
+    -fx-padding: 20px;
+    -fx-spacing: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-border-color: #ccc;
+
+    -fx-alignment: center;
+    -fx-pref-width: 400px; /* This is an arbitrary value, adjust as needed */
+    -fx-pref-height: 300px; /* This is an arbitrary value, adjust as needed */
+}
+
+.login-button, .submit-btn {
+    -fx-background-color: #0072C6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+}
+
+.login-button:hover {
+    -fx-background-color: #005ea1;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #FF8C00;
+}
+
+.anchor-pane {
+    -fx-background-color: #f7f7f7;
+    -fx-alignment: center;
+}
+
+.form {
+    -fx-alignment: center;
+}
+.button:hover {
+    -fx-background-color: #3cb371;
+}

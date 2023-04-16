@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../form.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.airline.controllers.Staff.Controllers.ManageFlightController">
+
+    <children>
+        <SplitPane dividerPositions="0.11840277777777776" layoutY="-3.0" orientation="VERTICAL" prefHeight="577.0" prefWidth="950.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="949.0">
+                    <children>
+                        <HBox alignment="CENTER" layoutX="-3.0" prefHeight="70.0" prefWidth="957.0">
+                            <children>
+                                <Hyperlink fx:id="signOut" onAction="#handleNavigation" text="Sign out" textFill="RED">
+                                    <font>
+                                        <Font name="Bell MT Bold" size="14.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                </Hyperlink>
+                                <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="832.0">
+                                    <children>
+                                        <Hyperlink fx:id="myProfile" layoutX="460.0" layoutY="33.0" onAction="#handleNavigation" text="My profile">
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Hyperlink>
+                                        <Hyperlink fx:id="manageFlight" layoutX="495.0" layoutY="32.0" onAction="#handleNavigation" text="Manage Flight">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </Hyperlink>
+                                        <Hyperlink fx:id="bookings" layoutX="428.0" layoutY="32.0" onAction="#handleNavigation" text="Bookings">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </Hyperlink>
+                                        <Hyperlink fx:id="flights" layoutX="397.0" layoutY="32.0" onAction="#handleNavigation" text="Flights">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="10.0" />
+                                            </HBox.margin>
+                                        </Hyperlink>
+                                    </children></HBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="510.0" prefWidth="949.0">
+               <children>
+                  <HBox alignment="TOP_CENTER" layoutX="-5.0" layoutY="-1.0" prefHeight="505.0" prefWidth="958.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="506.0" prefWidth="322.0" style="-fx-background-image: #FAF9F6;">
+                           <children>
+                              <Label fx:id="confirmMsg" text="Flight is not existed!" textFill="RED" visible="false">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="100.0" top="100.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label text="Search By Flight ID:" textFill="#0c7aff">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="15.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="flightIdField" prefHeight="26.0" prefWidth="239.0" promptText="Flight ID" />
+                                    <Button mnemonicParsing="false" onAction="#searchHandler" style="-fx-background-color: #0c7aff;" text="Search" textFill="WHITE">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets left="25.0" right="25.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets right="150.0" />
+                           </HBox.margin>
+                        </VBox>
+                         <VBox alignment="CENTER" layoutX="274.0" layoutY="14.0" prefHeight="400.0" prefWidth="400.0" spacing="20">
+                             <Text fx:id="flightIdLabel" fill="#0072c6" styleClass="title" text="Flight No. " textAlignment="CENTER" wrappingWidth="224.3359375">
+                              <font>
+                                 <Font name="Bell MT Bold" size="18.0" />
+                              </font></Text>
+
+                             <GridPane alignment="CENTER" hgap="10" styleClass="form-container" vgap="10">
+                                 <Label text="Origin" />
+                                 <TextField fx:id="originField" GridPane.columnIndex="2" />
+
+                                 <Label text="Destination" GridPane.rowIndex="1" />
+                                 <TextField fx:id="destField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+                                 <Label text="Day" GridPane.rowIndex="2" />
+                                 <Label text="Time" GridPane.rowIndex="3" />
+                                 <Label text="Duration" GridPane.rowIndex="4" />
+                                 <TextField fx:id="durationField" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                 <Label text="Airline" GridPane.rowIndex="5" />
+                                 <ComboBox fx:id="airlineField" layoutX="132.0" layoutY="23.0" prefHeight="26.0" prefWidth="176.0" promptText="" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                     <items>
+                                         <FXCollections fx:factory="observableArrayList">
+                                             <String fx:value="" />
+                                             <String fx:value="Admins only" />
+                                             <String fx:value="Staff only" />
+                                         </FXCollections>
+                                     </items>
+                                 </ComboBox>
+                                 <DatePicker fx:id="dateField" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                 <TextField fx:id="timeField" layoutX="163.0" layoutY="32.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                 <Label layoutX="81.0" layoutY="180.0" text="Price" GridPane.rowIndex="6" />
+                                 <TextField fx:id="priceField" layoutX="163.0" layoutY="176.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                 <Label layoutX="81.0" layoutY="253.0" text="Number of seats" GridPane.rowIndex="7" />
+                                 <TextField fx:id="seatsNoField" layoutX="163.0" layoutY="249.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                 <columnConstraints>
+                                     <ColumnConstraints />
+                                     <ColumnConstraints />
+                                     <ColumnConstraints />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                     <RowConstraints />
+                                     <RowConstraints />
+                                     <RowConstraints />
+                                     <RowConstraints />
+                                     <RowConstraints />
+                                     <RowConstraints />
+                                     <RowConstraints />
+                                     <RowConstraints />
+                                     <RowConstraints />
+                                     <RowConstraints />
+                                     <RowConstraints />
+                                 </rowConstraints>
+                             </GridPane>
+                           <HBox alignment="CENTER" prefHeight="53.0" prefWidth="400.0">
+                              <children>
+                                 <Button fx:id="updateBtn" mnemonicParsing="false" onAction="#updateHandler" style="-fx-background-color: #0c7aff;" text="Update" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                       <Font name="System Bold" size="18.0" />
+                                    </font>
+                                    <cursor>
+                                       <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <HBox.margin>
+                                       <Insets right="20.0" />
+                                    </HBox.margin>
+                                 </Button>
+      
+                                   <Button mnemonicParsing="false" onAction="#deleteHandler" prefHeight="40.0" prefWidth="86.0" style="-fx-background-color: red;" text="Delete" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                           <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    <cursor>
+                                       <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <HBox.margin>
+                                       <Insets left="20.0" />
+                                    </HBox.margin>
+                                   </Button>
+                              </children>
+                           </HBox>
+                         </VBox>
+                     </children></HBox>
+               </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+
+</AnchorPane>

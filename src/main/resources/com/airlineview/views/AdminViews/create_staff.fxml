@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="577.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.airline.controllers.Admin.Controllers.CreateStaffController">
+   <children>
+      <SplitPane dividerPositions="0.11840277777777776" layoutY="-3.0" orientation="VERTICAL" prefHeight="577.0" prefWidth="950.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="949.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="-3.0" prefHeight="70.0" prefWidth="957.0">
+                     <children>
+                        <Hyperlink fx:id="signOut" onAction="#handleNavigation" text="Sign out" textFill="RED">
+                           <font>
+                              <Font name="Bell MT Bold" size="14.0" />
+                           </font>
+                        </Hyperlink>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="777.0">
+                           <children>
+                              <Hyperlink fx:id="myProfile" layoutX="460.0" layoutY="33.0" onAction="#handleNavigation" text="My profile">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Hyperlink>
+                              <Hyperlink fx:id="deleteEmp" layoutX="495.0" layoutY="32.0" onAction="#handleNavigation" text="Manage Employee">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Hyperlink>
+                              <Hyperlink fx:id="createStaff" layoutX="428.0" layoutY="32.0" onAction="#handleNavigation" text="Create Staff">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Hyperlink>
+                              <Hyperlink fx:id="createAdmin" layoutX="377.0" layoutY="32.0" onAction="#handleNavigation" text="Create Admin">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Hyperlink>
+                              <Hyperlink fx:id="home" layoutX="397.0" layoutY="32.0" onAction="#handleNavigation" text="Home">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Hyperlink>
+                           </children></HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="510.0" prefWidth="949.0" stylesheets="@../form.css">
+              <BorderPane fx:id="borderPane" />
+              <VBox alignment="CENTER" layoutX="274.0" layoutY="23.0" prefHeight="400.0" prefWidth="400.0" spacing="20">
+                  <Label fx:id="confirmMsg" text="Label" visible="false">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Text fill="#0072c6" styleClass="title" text="Create New Staff" wrappingWidth="224.3359375" />
+
+                  <GridPane alignment="CENTER" hgap="10" styleClass="form-container" vgap="10">
+                      <Label text="First Name" />
+                      <TextField fx:id="firstNameField" GridPane.columnIndex="2" />
+
+                      <Label text="Last Name" GridPane.rowIndex="1" />
+                      <TextField fx:id="lastNameField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+                      <Label text="Email" GridPane.rowIndex="2" />
+                      <TextField fx:id="emailField" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+
+                      <Label text="Password" GridPane.rowIndex="3" />
+                      <PasswordField fx:id="passwordField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                     <Label text="Job Title" GridPane.rowIndex="4" />
+                     <TextField fx:id="jobTitleField" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                      <Label text="Department" GridPane.rowIndex="5" />
+                      <ComboBox fx:id="deptBox" layoutX="132.0" layoutY="23.0" prefHeight="15.0" prefWidth="154.0" promptText="" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                          <items>
+                              <FXCollections fx:factory="observableArrayList">
+
+                              </FXCollections>
+                          </items>
+                      </ComboBox>
+                      <columnConstraints>
+                          <ColumnConstraints />
+                          <ColumnConstraints />
+                        <ColumnConstraints />
+                      </columnConstraints>
+                      <rowConstraints>
+                          <RowConstraints />
+                          <RowConstraints />
+                          <RowConstraints />
+                          <RowConstraints />
+                          <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                      </rowConstraints>
+                  </GridPane>
+
+                  <Button onAction="#submitForm" styleClass="submit-btn" text="Submit" />
+              </VBox>
+          </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

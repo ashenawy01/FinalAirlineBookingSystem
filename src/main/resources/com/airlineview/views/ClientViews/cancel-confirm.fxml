@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="577.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="510.0" prefWidth="949.0">
+              <children>
+                  <VBox alignment="CENTER" prefHeight="577.0" prefWidth="950.0">
+                      <children>
+
+                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                  <Label fx:id="filterLabel1" text="You are about to cancel the following bookings" textFill="#ff0d0d">
+                                      <font>
+                                          <Font name="Bell MT Bold" size="25.0" />
+                                      </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                                  </Label>
+                              </children>
+                              <VBox.margin>
+                                  <Insets bottom="35.0" />
+                              </VBox.margin>
+                          </HBox>
+
+
+                          <TableView fx:id="bookingTable" minHeight="-Infinity" minWidth="-Infinity" prefHeight="329.0" prefWidth="760.0">
+                              <columns>
+                                  <TableColumn fx:id="bookingIdCol" prefWidth="74.99999505281448" text="Booking No">
+                                       <cellValueFactory>
+                                          <PropertyValueFactory property="seatsNo" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn fx:id="flightsNoCol" prefWidth="170.0" text="Flights No">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="destination" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn fx:id="dateCol" prefWidth="170.0" text="Booking Date">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="airline" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn fx:id="travelersNoCol" prefWidth="170.0" text="Travelers No">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="flightTime" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn fx:id="totalFareCol" prefWidth="170.0" text="Total Fare">
+                                      <cellValueFactory>
+                                          <PropertyValueFactory property="duration" />
+                                      </cellValueFactory>
+                                  </TableColumn>
+                              </columns>
+                              <VBox.margin>
+                                  <Insets bottom="25.0" left="90.0" right="100.0" />
+                              </VBox.margin>
+                          </TableView>
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                                <Button fx:id="cancelBtn" mnemonicParsing="false" prefHeight="42.0" prefWidth="115.0" style="-fx-background-color: #e41616;" text="Confirm" textFill="WHITE">
+                                    <effect>
+                                        <Glow level="0.12" />
+                                    </effect>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                                </Button>
+                        <Button fx:id="keepBtn" layoutX="428.0" layoutY="10.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="115.0" style="-fx-background-color: #0072C6;" text="Keep Bookings" textFill="WHITE">
+                           <effect>
+                              <Glow level="0.12" />
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                      </children>
+                  </VBox>
+              </children>
+          </AnchorPane>
+    </children>
+
+</AnchorPane>

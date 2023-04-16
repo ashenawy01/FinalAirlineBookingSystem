@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane stylesheets="@../form.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <AnchorPane prefHeight="438.0" prefWidth="600.0" styleClass="form">
+      <BorderPane fx:id="borderPane" />
+      <VBox alignment="CENTER" layoutX="100.0" layoutY="24.0" prefHeight="400.0" prefWidth="400.0" spacing="20">
+         <Text styleClass="title" text="Booking Details" wrappingWidth="189.3359375" />
+         <TextArea fx:id="bookingDetailsField" disable="true" prefHeight="271.0" prefWidth="360.0" text="Booking ID { 2 }&#10;Date { 2023-04-11T00:38:06.213497500 } &#10;Travelers 1&#10;Flight No 4&#10;Origin= 'Cairo'  &#10;Destination='Dubai'&#10;FlightTime=2024-01-01T01:20 &#10;duration=2.5 hours &#10;ticketPrice=2552.0, airline=Emirates}&#10;Seat {seatNumber='A1', classType=Economy}&#10;------------------------------------------&#10;Total Fare { 2552.0 $ }">
+            <VBox.margin>
+               <Insets left="20.0" right="20.0" />
+            </VBox.margin>
+         </TextArea>
+
+         <Button fx:id="confirmBtn" styleClass="submit-btn" text="Confirm" />
+
+      </VBox>
+   </AnchorPane>
+</StackPane>

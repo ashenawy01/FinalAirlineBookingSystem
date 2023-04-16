@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../form.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.airline.controllers.Admin.Controllers.AdminLoginFormController">
+
+    <top>
+        <VBox alignment="CENTER" prefHeight="58.0" prefWidth="600.0" spacing="10">
+            <Label styleClass="title" text="Sign In (Admin)" />
+        </VBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" prefHeight="347.0" prefWidth="600.0" spacing="10" styleClass="form-container">
+         <Label fx:id="errorMsg" text=" Incorrect email or password " textFill="RED" visible="false">
+            <font>
+               <Font size="14.0" />
+            </font>
+            <VBox.margin>
+               <Insets bottom="25.0" />
+            </VBox.margin>
+         </Label>
+            <TextField fx:id="emailField" prefHeight="26.0" prefWidth="485.0" promptText="Email" />
+            <PasswordField fx:id="passwordField" promptText="Password" />
+            <Button fx:id="loginButton" onMouseClicked="#login" styleClass="login-button" text="Sign In" />
+            <Hyperlink fx:id="backLink" layoutX="266.0" layoutY="234.0" onAction="#back" text="&lt;&lt; Back " />
+        </VBox>
+    </center>
+
+</BorderPane>
