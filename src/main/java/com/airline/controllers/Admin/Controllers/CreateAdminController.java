@@ -21,8 +21,7 @@ public class CreateAdminController extends AdminViewController{
     private PasswordField passwordField;
     @FXML
     private CheckBox isGlobalCheck;
-    @FXML
-    private Label confirmMessage;
+
     @FXML
     private Label errorMsg;
 
@@ -47,7 +46,7 @@ public class CreateAdminController extends AdminViewController{
     private void display(String msg, Color color) {
         errorMsg.setText(msg);
         errorMsg.setTextFill(color);
-        confirmMessage.setVisible(true);
+        errorMsg.setVisible(true);
     }
 
     private void clearAll () {
@@ -56,6 +55,5 @@ public class CreateAdminController extends AdminViewController{
         emailField.clear();
         passwordField.clear();
         isGlobalCheck.setSelected(false);
-        confirmMessage.setVisible(false);
     }
 }

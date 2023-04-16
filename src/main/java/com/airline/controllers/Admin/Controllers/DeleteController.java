@@ -63,6 +63,7 @@ public class DeleteController extends AdminViewController {
         jobTitleField.setText(null);
         deptField.setText(null);
         statusField.setText(null);
+        empIdFiled.setText(null);
         errorMsg.setText("Sorry! User is not existed");
 
         deptField.setVisible(false);
